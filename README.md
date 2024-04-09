@@ -10,4 +10,5 @@
 # git clone https://github.com/rius-admin/cst-ddos.py
 # ls
 # cd cst-ddos.py
+# ls
 # python2 cst.py
