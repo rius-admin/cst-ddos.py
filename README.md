@@ -9,5 +9,5 @@
 # pkg install git
 # git clone https://github.com/rius-admin/cst-ddos.py
 # ls
-# cd cst-ddos  
+# cd cst-ddos.py
 # python2 cst.py
