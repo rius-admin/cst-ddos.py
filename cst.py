@@ -22,14 +22,14 @@ os.system("figlet CSteam")
 print
 print "Author   : Mr.Rius"
 print "Github   : https://github.com/rius-admin"
+print " "
 print "Ctrl + c = stop"
-print "go"
 print
 ip = raw_input("IP Target : ")
 port = input("Port       : ")
 
 os.system("clear")
-os.system("figlet attack")
+os.system("figlet Attack")
 print "[                    ] 0% "
 time.sleep(5)
 print "[=====               ] 25%"
