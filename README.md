@@ -12,3 +12,5 @@
 # cd cst-ddos.py
 # ls
 # python2 cst.py
+
+( Tools ini adalah untuk test aplikasi/website pengguna melalui packet sent ) 
