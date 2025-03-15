@@ -1,3 +1,5 @@
+( Tools ini adalah untuk test aplikasi/website pengguna melalui packet sent ) 
+
 # pkg update
 # pkg upgrade
 # pkg install ruby
@@ -13,4 +15,3 @@
 # ls
 # python2 cst.py
 
-( Tools ini adalah untuk test aplikasi/website pengguna melalui packet sent ) 
